@@ -7,6 +7,11 @@ rules:
         type: gauge
         unit: sessions
         desc: The number of active sessions.
+      rejectedSessions:
+        metric: tomcat.rejected_sessions
+        type: gauge
+        unit: sessions
+        desc: The number of rejected sessions.
   - bean: Catalina:type=GlobalRequestProcessor,name=*
     metricAttribute:
       name: param(name)
