@@ -1,16 +1,14 @@
 ---
 rules:
   - bean: Catalina:type=Manager,host=localhost,context=*
+    unit: sessions
+    type: gauge
     mapping:
       activeSessions:
         metric: tomcat.sessions
-        type: gauge
-        unit: sessions
         desc: The number of active sessions.
       rejectedSessions:
         metric: tomcat.rejected_sessions
-        type: gauge
-        unit: sessions
         desc: The number of rejected sessions.
   - bean: Catalina:type=GlobalRequestProcessor,name=*
     metricAttribute:

@@ -71,34 +71,41 @@ rules:
         metric: max
         desc: The maximum amount of memory can be used for the memory pool
   - bean: java.lang:type=OperatingSystem
-    unit: by
     prefix: jvm.operating.system.
     type: gauge
     mapping:
       TotalSwapSpaceSize:
         metric: total.swap.space.size
         desc: The host swap memory size in bytes
+        unit: by
       SystemCpuLoad:
         metric: system.cpu.load
         desc: The current load of CPU in host
+        unit: by
       ProcessCpuLoad:
         metric: process.cpu.load
         desc: The current load of CPU in process
+        unit: by
       FreeSwapSpaceSize:
         metric: free.swap.space.size
         desc: The amount of available swap memory in bytes
+        unit: by
       TotalPhysicalMemorySize:
         metric: total.physical.memory.size
         desc: The total physical memory size in host
+        unit: by
       FreePhysicalMemorySize:
         metric: free.physical.memory.size
         desc: The amount of free physical memory in host
+        unit: by
       OpenFileDescriptorCount:
         metric: open.file.descriptor.count
         desc: The number of opened file descriptors
+        unit: "1"
       AvailableProcessors:
         metric: available.processors
         desc: The number of available processors
+        unit: "1"
   - bean: java.lang:type=Threading
     unit: "1"
     prefix: jvm.threads.
