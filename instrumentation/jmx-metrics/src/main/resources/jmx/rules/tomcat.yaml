@@ -67,12 +67,15 @@ rules:
         unit: threads
         desc: The number of threads
   - bean: Tomcat:type=Manager,host=localhost,context=*
+    unit: sessions
+    type: gauge
     mapping:
       activeSessions:
         metric: tomcat.sessions
-        type: gauge
-        unit: sessions
         desc: The number of active sessions.
+      rejectedSessions:
+        metric: tomcat.rejected_sessions
+        desc: The number of rejected sessions.
   - bean: Tomcat:type=GlobalRequestProcessor,name=*
     metricAttribute:
       name: param(name)
